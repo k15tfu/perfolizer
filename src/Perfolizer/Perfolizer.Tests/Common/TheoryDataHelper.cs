@@ -2,10 +2,10 @@ namespace Perfolizer.Tests.Common;
 
 public static class TheoryDataHelper
 {
-    public static TheoryData<string> Create(IEnumerable<string> values)
+    public static TheoryData<T> Create<T>(IEnumerable<T> values)
     {
-        var data = new TheoryData<string>();
-        foreach (string value in values)
+        var data = new TheoryData<T>();
+        foreach (var value in values)
             data.Add(value);
         return data;
     }
