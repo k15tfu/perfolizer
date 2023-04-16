@@ -97,5 +97,11 @@ internal static class CollectionExtensions
         return new Sample(values.ToList());
     }
 
+    public static double[] ToDoubleArray(this IEnumerable<int> values)
+    {
+        Assertion.NotNull(nameof(values), values);
+        return values.Select(x => (double)x).ToArray();
+    }
+
     public static bool IsEmpty<T>(this IEnumerable<T> values) => !values.Any();
 }
